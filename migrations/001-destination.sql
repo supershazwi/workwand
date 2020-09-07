@@ -66,15 +66,12 @@ CREATE TABLE Plan_Step (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	sequence INTEGER,
 	content TEXT,
+	owner TEXT,
+	processing_time TEXT,
+	deadline TEXT,
+	result TEXT,
 	planId INTEGER REFERENCES Plan(id)
 );
-
-CREATE TABLE Plan_Document (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	name TEXT,
-	planId INTEGER REFERENCES Plan(id)
-);
-
 
 INSERT INTO Destination (name, slug) values ('Singapore', 'singapore');
 INSERT INTO Destination (name, slug) values ('Malaysia', 'malaysia');
@@ -159,6 +156,11 @@ INSERT INTO Plan_Eligibility_Details (content, category, planId) values ('To fin
 INSERT INTO Plan_Age_Eligibility (lower_bound_age, upper_bound_age, planId) values (18, 99, 4);
 
 INSERT INTO Plan_Country_Eligibility (country, planId) values ("All", 4);
+
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Submit an application", "Candidate", "8 weeks", "","In-principle approval letter or rejection letter", 4);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Get the pass issued", "Candidate, company representative or employment agency", "Immediate", "Within 6 months of in-principle approval","Notification letter", 4);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Register fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 4);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Receive the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","EntrePass card", 4);
 
 -- Down
 DROP TABLE Destination;

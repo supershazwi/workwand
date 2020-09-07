@@ -6,7 +6,7 @@ import Markup from 'react-html-markup';
 
 
 
-export default function DestinationPlan({ result, plan_eligibility_details, sources }) {
+export default function DestinationPlan({ result, plan_eligibility_details, sources, plan_steps }) {
   return (
     <Layout>
       <section className="pd-tp-6 pd-bm-1-5">
@@ -134,7 +134,30 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                 <a href={ result[0].application_link } type="button" className="btn btn-purple-soft btn-lg mb-1 btn-block mb-6">
                   <strong>Begin Application</strong>
                 </a>
-                <div className="card card-border border-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div className="card card-border border-bleed shadow-light-lg mb-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                      <div className="card-body">
+
+                         <h3 className="card-title text-body font-weight-bold text-purple">
+                          <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Communication/Clipboard-list.svg"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#5f27cd" opacity=".3"></path><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#5f27cd"></path><rect fill="#5f27cd" opacity=".3" x="10" y="9" width="7" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="7" y="9" width="2" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="7" y="13" width="2" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="10" y="13" width="7" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="7" y="17" width="2" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="10" y="17" width="7" height="2" rx="1"></rect></g></svg></span> Steps
+                          </h3>
+                        <div>
+                          <div className="list-group list-group-flush">
+                            { plan_steps.map(({ sequence, content, owner, processing_time, deadline, result }) => (
+                              <div className="list-group-item d-flex" key={sequence}>
+                                <div className="mr-auto" style={{ width: '100%' }}>
+                                  <p className="font-weight-bold mb-1">
+                                    Step {sequence} <span style={{ float: 'right' }}>{processing_time}</span>
+                                  </p>
+                                  <p className="text-muted mb-1">{content}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                      </div>
+                </div>
+                <div className="card card-border border-bleed shadow-light-lg mb-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                       <div className="card-body">
 
                          <h3 className="card-title text-body font-weight-bold text-purple">
@@ -158,8 +181,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                         </div>
 
                       </div>
-                      
-                    </div>
+                </div>
               </div>
             </div>
           </div>
@@ -191,11 +213,15 @@ export async function getStaticProps({ params }) {
   const res2 = await fetch("http://localhost:3000/api/source/" + params.planSlug)
   const sources = await res2.json()
 
+  const res3 = await fetch("http://localhost:3000/api/plan-steps/" + params.planSlug)
+  const plan_steps = await res3.json()
+
   return {
     props: { 
       result: result,
       plan_eligibility_details: plan_eligibility_details,
-      sources: sources
+      sources: sources,
+      plan_steps: plan_steps
     }
   }
 }
