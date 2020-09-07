@@ -15,6 +15,7 @@ CREATE TABLE Role (
 CREATE TABLE Plan (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	name TEXT,
+	eligibility_details TEXT, 
 	category TEXT,
 	slug TEXT,
 	remarks TEXT,
@@ -68,6 +69,12 @@ CREATE TABLE Plan_Step (
 	planId INTEGER REFERENCES Plan(id)
 );
 
+CREATE TABLE Plan_Document (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT,
+	planId INTEGER REFERENCES Plan(id)
+);
+
 
 INSERT INTO Destination (name, slug) values ('Singapore', 'singapore');
 INSERT INTO Destination (name, slug) values ('Malaysia', 'malaysia');
@@ -79,10 +86,10 @@ INSERT INTO Destination (name, slug) values ('Vietnam', 'vietnam');
 
 INSERT INTO Role (name, slug, destinationId) values ('Software Developer', 'software-developer', 1);
 
-INSERT INTO Plan (name, category, slug, remarks, application_duration, validity, renewable, passes_for_family, foreign_worker_levy, quota, application_link, destinationId) values ('Work Holiday Pass (under Work Holiday Programme)', 'Trainees & Students', 'work-holiday-pass-under-work-holiday-programme-singapore', '', 21, 180, FALSE, FALSE, FALSE, 2000, 'https://service2.mom.gov.sg/workpass/whp/whp_applications', 1);
-INSERT INTO Plan (name, category, slug, remarks, application_duration, validity, renewable, passes_for_family, foreign_worker_levy, quota, application_link, destinationId) values ('Work Holiday Pass (under Work and Holiday Visa Programme)', 'Trainees & Students', 'work-holiday-pass-under-work-and-holiday-visa-programme-singapore', 'For Australian Students', 28, 360, FALSE, FALSE, FALSE, 500, 'https://service2.mom.gov.sg/workpass/whvp/whvp_applications', 1);
-INSERT INTO Plan (name, category, slug, remarks, application_duration, validity, renewable, passes_for_family, foreign_worker_levy, quota, application_link, destinationId) values ('Employment Pass', 'Professionals', 'employment-pass-singapore', '', 21, 730, TRUE, TRUE, FALSE, -1, 'https://www.mom.gov.sg/eservices/services/apply-for-a-new-ep-and-s-pass', 1);
-INSERT INTO Plan (name, category, slug, remarks, application_duration, validity, renewable, passes_for_family, foreign_worker_levy, quota, application_link, destinationId) values ('EntrePass', 'Professionals', 'entrepass-singapore', '', 56, 365, TRUE, TRUE, FALSE, -1, 'https://form.gov.sg/#!/5ce3a8b404ef480010a73da3', 1);
+INSERT INTO Plan (name, eligibility_details, category, slug, remarks, application_duration, validity, renewable, passes_for_family, foreign_worker_levy, quota, application_link, destinationId) values ("Work Holiday Pass (under Work Holiday Programme)", "","Trainees & Students", "work-holiday-pass-under-work-holiday-programme-singapore", "", 21, 180, FALSE, FALSE, FALSE, 2000, "https://service2.mom.gov.sg/workpass/whp/whp_applications", 1);
+INSERT INTO Plan (name, eligibility_details, category, slug, remarks, application_duration, validity, renewable, passes_for_family, foreign_worker_levy, quota, application_link, destinationId) values ("Work Holiday Pass (under Work and Holiday Visa Programme)", "","Trainees & Students", "work-holiday-pass-under-work-and-holiday-visa-programme-singapore", "For Australian Students", 28, 360, FALSE, FALSE, FALSE, 500, "https://service2.mom.gov.sg/workpass/whvp/whvp_applications", 1);
+INSERT INTO Plan (name, eligibility_details, category, slug, remarks, application_duration, validity, renewable, passes_for_family, foreign_worker_levy, quota, application_link, destinationId) values ("Employment Pass", "","Professionals", "employment-pass-singapore", "", 21, 730, TRUE, TRUE, FALSE, -1, "https://www.mom.gov.sg/eservices/services/apply-for-a-new-ep-and-s-pass", 1);
+INSERT INTO Plan (name, eligibility_details, category, slug, remarks, application_duration, validity, renewable, passes_for_family, foreign_worker_levy, quota, application_link, destinationId) values ("EntrePass", "<div className='list-group list-group-flush'><div className='list-group-item d-flex align-items-center'><div className='mr-auto'><p className='font-weight-bold mb-1' style='font-weight: 600 !important; margin-bottom: 0.25rem !important;'>General</p><ul className='mb-1' style='0.25rem !important;'><li className='text-muted' style='color: #333333 !important;'>Have started, or intend to start, a private limited company registered with ACRA.</li><li className='text-muted' style='color: #333333 !important;'>If registered, the company must be less than 6 months old on the date you apply.</li></ul></div></div><hr/><div className='list-group-item d-flex align-items-center'><div className='mr-auto'><p className='font-weight-bold mb-1' style='font-weight: 600 !important; margin-bottom: 0.25rem !important;'>Entrepreneur</p><ul className='mb-1' style='0.25rem !important;'><li className='text-muted' style='color: #333333 !important;'>Your company raised funding of at least $100,000 from a government investment vehicle, venture capitalist (VC) or business angel that is recognised by a Singapore Government agency.</li><li className='text-muted' style='color: #333333 !important;'>Your company is an existing incubatee at an incubator or accelerator in Singapore that is recognised by the Government.</li><li className='text-muted' style='color: #333333 !important;'>You have significant business experience or network and promising entrepreneurial track record of starting highly-scalable businesses and want to establish, develop and manage a new or existing business in Singapore.</li></ul></div></div><hr/><div className='list-group-item d-flex align-items-center'><div className='mr-auto'><p className='font-weight-bold mb-1' style='font-weight: 600 !important; margin-bottom: 0.25rem !important;'>Innovator</p><ul className='mb-1' style='0.25rem !important;'><li className='text-muted' style='color: #333333 !important;'>You or your company holds an intellectual property (IP), registered with an approved national IP institution, which delivers a significant competitive advantage to your proposed business that cannot be easily replicated.</li><li className='text-muted' style='color: #333333 !important;'>Your company has an ongoing research collaboration with a research institution under the Agency for Science, Technology and Research (A*STAR), an Institute of Higher Learning (IHL) in Singapore.</li><li className='text-muted' style='color: #333333 !important;'>You have exceptional technical or domain expertise in an area related to your proposed business.</li></ul></div></div><hr/><div className='list-group-item d-flex align-items-center'><div className='mr-auto'><p className='font-weight-bold mb-1' style='font-weight: 600 !important; margin-bottom: 0.25rem !important;'>Investor</p><ul className='mb-1' style='0.25rem !important;'><li className='text-muted' style='color: #333333 !important;'>To find out more about the eligibility criteria, you can contact Enterprise Singapore at enquiry@enterprisesg.gov.sg.</li></ul></div></div></div>","Professionals", "entrepass-singapore", "", 56, 365, TRUE, TRUE, FALSE, -1, "https://form.gov.sg/#!/5ce3a8b404ef480010a73da3", 1);
 
 INSERT INTO Plan_Cost (content, planId) values ('175 SGD for each pass', 1);
 INSERT INTO Plan_Cost (content, planId) values ('30 SGD for each Multiple Journey Visa', 1);
@@ -139,7 +146,7 @@ INSERT INTO Plan_Age_Eligibility (lower_bound_age, upper_bound_age, planId) valu
 
 INSERT INTO Plan_Country_Eligibility (country, planId) values ("All", 3);
 
-INSERT INTO Plan_Eligibility_Details (content, category, planId) values ('Have started, or intend to start, a private limited company registered with ACRA.', 'General', 4);
+INSERT INTO Plan_Eligibility_Details (content, category, planId) values ('`<strong>Have started</strong>`, or intend to start, a private limited company registered with ACRA.', 'General', 4);
 INSERT INTO Plan_Eligibility_Details (content, category, planId) values ('If registered, the company must be less than 6 months old on the date you apply.', 'General', 4);
 INSERT INTO Plan_Eligibility_Details (content, category, planId) values ('Your company raised funding of at least $100,000 from a government investment vehicle, venture capitalist (VC) or business angel that is recognised by a Singapore Government agency.', 'Entrepreneur', 4);
 INSERT INTO Plan_Eligibility_Details (content, category, planId) values ('Your company is an existing incubatee at an incubator or accelerator in Singapore that is recognised by the Government.', 'Entrepreneur', 4);

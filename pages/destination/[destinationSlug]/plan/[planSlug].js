@@ -1,6 +1,10 @@
 import Layout from '../../../../components/layout'
 import Link from 'next/link'
 import { numberWithCommas } from '../../../../lib/helpers'
+// import { Markup } from 'interweave';
+import Markup from 'react-html-markup';
+
+
 
 export default function DestinationPlan({ result, plan_eligibility_details, sources }) {
   return (
@@ -27,24 +31,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                     <h3 className="card-title text-body font-weight-bold text-purple">
                       <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Navigation/Double-check.svg"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M20.738 5.352a1 1 0 111.524 1.296l-8.5 10a1 1 0 01-1.426.1l-4.5-4a1 1 0 111.328-1.495l3.736 3.32 7.838-9.22z" fill="#5f27cd" opacity=".3"></path><path d="M15.738 6.352a1 1 0 111.524 1.296l-8.5 10a1 1 0 01-1.426.1l-4.5-4a1 1 0 111.328-1.495l3.736 3.32 7.838-9.22z" fill="#5f27cd"></path></g></svg></span> Elibility Requirements
                     </h3>
-                    <div>
-                      <div className="list-group list-group-flush">
-                        <div className="list-group-item d-flex align-items-center">
-                          
-                          <div className="mr-auto">
-                            
-                          <ul>
-                            { plan_eligibility_details.map(({ content, id }) => (
-
-                              <li key={id}>{ content }</li>
-
-                            ))}
-                          </ul>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <Markup htmlString = { result[0].eligibility_details } />
                   </div>
                 </div>
                 <div className="card card-border border-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up">
@@ -64,7 +51,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                             
                             <ul className="mb-1">
                             { result.map(({ content, id }) => (
-                              <li className="font-size-sm text-muted" key={id}>{content}</li>
+                              <li className="text-muted" key={id}>{content}</li>
                             ))}
                             </ul>
 
@@ -78,7 +65,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                               Application Duration
                             </p>
 
-                            <p className="font-size-sm text-muted mb-1">
+                            <p className="text-muted mb-1">
                               Approximately { result[0].application_duration / 7 } weeks
                             </p>
 
@@ -92,7 +79,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                               Validity Period
                             </p>
 
-                            <p className="font-size-sm text-muted mb-1">
+                            <p className="text-muted mb-1">
                               { Math.floor(result[0].validity / 30) } months
                             </p>
 
@@ -103,7 +90,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                             <p className="font-weight-bold mb-1">
                               Renewable
                             </p>
-                            <p className="font-size-sm text-muted mb-1">
+                            <p className="text-muted mb-1">
                               { (result[0].renewable) ? "Yes" : "No"}
                             </p>
                           </div>
@@ -113,7 +100,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                             <p className="font-weight-bold mb-1">
                               Passes for Family
                             </p>
-                            <p className="font-size-sm text-muted mb-1">
+                            <p className="text-muted mb-1">
                               { (result[0].passes_for_family) ? "Yes" : "No"}
                             </p>
                           </div>
@@ -123,7 +110,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                             <p className="font-weight-bold mb-1">
                               Foreign Worker Levy
                             </p>
-                            <p className="font-size-sm text-muted mb-1">
+                            <p className="text-muted mb-1">
                               { (result[0].foreign_worker_levy) ? "Yes" : "No"}
                             </p>
                           </div>
@@ -133,7 +120,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                             <p className="font-weight-bold mb-1">
                               Quota
                             </p>
-                            <p className="font-size-sm text-muted mb-1">
+                            <p className="text-muted mb-1">
                               { numberWithCommas(result[0].quota) == -1 ? "No quota" : numberWithCommas(result[0].quota)}
                             </p>
                           </div>
