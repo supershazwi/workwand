@@ -210,12 +210,14 @@ export default class Role extends React.Component {
                       <div className="list-group list-group-flush">
                         <div className="list-group-item d-flex align-items-center">
                           <div className="mr-auto">
+                            <Link href="/destination/singapore/average-salary/role/software-developer"><a>
                             <p className="font-weight-bold mb-1">
-                              Salary Range
+                              Average Salary
                             </p>
+                            </a></Link>
                           </div>
                           <p className="font-weight-bold mb-1">
-                            50,000 SGD - 75,000 SGD per year
+                            61,236 SGD per year
                           </p>
                         </div>
                         <div className="list-group-item d-flex align-items-center">
