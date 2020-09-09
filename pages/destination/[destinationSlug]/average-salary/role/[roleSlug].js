@@ -20,54 +20,29 @@ export default function AdditionalBuyersStampDuty() {
      	          	<div className="col-12 col-md-8">
 	     	            <div className="card card-border border-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up">
 	     	            	<div className="card-body">
-	     	            		<table className="table table-striped">
-	    		                    <thead>
-	    		                      <tr>
-	    		                        <th scope="col">Industry</th>
-	    		                        <th scope="col" colspan="3">Basic Wage</th>
-	    		                        <th scope="col" colspan="3">Gross Wage</th>
-	    		                      </tr>
-	    		                    </thead>
-	    		                    <tbody>
-	    		                      <tr>
-	    		                        <td></td>
-	    		                        <td>25<sup>th</sup> Percentile</td>
-                                  <td>Median</td>
-	    		                        <td>75<sup>th</sup> Percentile</td>
-                                  <td>25<sup>th</sup> Percentile</td>
-                                  <td>Median</td>
-                                  <td>75<sup>th</sup> Percentile</td>
-	    		                      </tr>
-	    		                    </tbody>
-	    		                  </table>
+	     	            		<table className="table table-striped" style={{ display: "block", overflow: "auto" }}>
+
+  		                      <tr>
+  		                        <th rowspan="2" style={{ backgroundColor: "#2c3e50", color: "white", border: "1px solid #f9fbfd", verticalAlign: "middle" }}>Industry</th>
+  		                        <th scope="col" colspan="3" style={{ backgroundColor: "#2c3e50", color: "white", textAlign: "center", border: "1px solid #f9fbfd" }}>Basic Wage</th>
+  		                        <th scope="col" colspan="3" style={{ backgroundColor: "#2c3e50", color: "white", textAlign: "center", border: "1px solid #f9fbfd" }}>Gross Wage</th>
+  		                      </tr>
+
+
+  		                      <tr>
+  		                        <td style={{ backgroundColor: "#34495e", color: "white", textAlign: "center", border: "1px solid #f9fbfd", padding: "0.5rem", verticalAlign: "middle" }}>25<sup>th</sup> Percentile</td>
+                              <td style={{ backgroundColor: "#34495e", color: "white", textAlign: "center", border: "1px solid #f9fbfd", padding: "0.5rem", verticalAlign: "middle" }}>Median</td>
+  		                        <td style={{ backgroundColor: "#34495e", color: "white", textAlign: "center", border: "1px solid #f9fbfd", padding: "0.5rem", verticalAlign: "middle" }}>75<sup>th</sup> Percentile</td>
+                              <td style={{ backgroundColor: "#34495e", color: "white", textAlign: "center", border: "1px solid #f9fbfd", padding: "0.5rem", verticalAlign: "middle" }}>25<sup>th</sup> Percentile</td>
+                              <td style={{ backgroundColor: "#34495e", color: "white", textAlign: "center", border: "1px solid #f9fbfd", padding: "0.5rem", verticalAlign: "middle" }}>Median</td>
+                              <td style={{ backgroundColor: "#34495e", color: "white", textAlign: "center", border: "1px solid #f9fbfd", padding: "0.5rem", verticalAlign: "middle" }}>75<sup>th</sup> Percentile</td>
+  		                      </tr>
+
+  		                  </table>
 	     	            	</div>
 	     	            </div>
      	          	</div>
      	          	<div className="col-12 col-md-4">
-
-       	            <div className="card card-border border-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-       	              <div className="card-body">
-
-   	                	   <h3 className="card-title text-body font-weight-bolder">
-       	                  <span data-toggle="tooltip" data-placement="top" title="" data-original-title="General/Clip.svg"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M11.086 16.036L9.672 14.62l2.474-2.475a1.5 1.5 0 00-2.12-2.12L6.49 13.56a3.5 3.5 0 004.95 4.95l7.07-7.072a3.5 3.5 0 000-4.95l-.353-.353a3 3 0 00-4.243 0L12.5 4.722a5 5 0 017.071 0l.354.353a5.5 5.5 0 010 7.779l-7.071 7.07a5.5 5.5 0 01-7.779-7.778l3.536-3.535a3.5 3.5 0 014.95 4.95l-2.475 2.475z" fill="#161c2d"></path></g></svg></span> Related Links
-       	                  </h3>
-       	                <div>
-       	                  <div className="list-group list-group-flush">
-                            <div className="list-group-item d-flex align-items-center">
-                              <div className="mr-auto">
-                                <Link href="/destination/[destinationSlug]/accommodation/buyers-stamp-duty" as={"/destination/singapore/accommodation/buyers-stamp-duty"}><a>
-                                <p className="font-weight-bold mb-1">
-                                	Buyer's Stamp Duty
-                                </p>
-                                </a></Link>
-                              </div>
-                            </div>
-                          </div>
-       	                </div>
-
-       	              </div>
-
-       	            </div>
 
        	            <div className="card card-border border-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
        	              <div className="card-body">
