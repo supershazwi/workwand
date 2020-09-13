@@ -1,7 +1,8 @@
 import Layout from '../../../../../components/layout'
+import { numberWithCommas } from '../../../../../lib/helpers'
 import Link from 'next/link'
 
-export default function AdditionalBuyersStampDuty() {
+export default function AdditionalBuyersStampDuty({ average_salary, industry_salaries }) {
   return (
   	<Layout>
   		<section className="pd-tp-6 pd-bm-1-5">
@@ -30,7 +31,7 @@ export default function AdditionalBuyersStampDuty() {
                               </a></Link>
                             </div>
                             <p className="font-weight-bold mb-1">
-                              61,236 SGD per year
+                              {numberWithCommas(average_salary)} SGD per year
                             </p>
                           </div>
                         </div>
@@ -53,75 +54,17 @@ export default function AdditionalBuyersStampDuty() {
                               <td style={{ backgroundColor: "#34495e", color: "white", textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>75<sup>th</sup> Percentile</td>
   		                      </tr>
 
-                            <tr>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>All</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,000</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,159</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>6,774</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,120</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,300</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>7,164</td>
+                            { industry_salaries.map(({ industry, basic_25th, basic_median, basic_75th, gross_25th, gross_median, gross_75th }) => (
+                              <tr>
+                              <td className="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>{industry}</td>
+                              <td className="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>{numberWithCommas(basic_25th)}</td>
+                              <td className="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>{numberWithCommas(basic_median)}</td>
+                              <td className="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>{numberWithCommas(basic_75th)}</td>
+                              <td className="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>{numberWithCommas(gross_25th)}</td>
+                              <td className="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>{numberWithCommas(gross_median)}</td>
+                              <td className="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>{numberWithCommas(gross_75th)}</td>
                             </tr>
-
-                            <tr>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>Manufacturing</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,314</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>6,457</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>8,011</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,486</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>6,826</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>8,051</td>
-                            </tr>
-
-                            <tr>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>Wholesale & Retail Trade</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>3,355</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,800</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>8,341</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>3,550</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,995</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>8,381</td>
-                            </tr>
-
-                            <tr>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>Transportation & Storage</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,000</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,325</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,262</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,005</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,620</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,766</td>
-                            </tr>
-
-                            <tr>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>Information & Communications</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>3,974</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,808</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,800</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,105</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,070</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>6,300</td>
-                            </tr>
-
-                            <tr>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>Business Services</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,322</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,937</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>7,611</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,322</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>6,055</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>7,937</td>
-                            </tr>
-
-                            <tr>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>Education, Health & Social Services</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>3,358</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,179</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,579</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>3,358</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>4,229</td>
-                              <td class="font-size-sm" style={{ textAlign: "center", border: "1px solid #161c2d", padding: "0.5rem", verticalAlign: "middle" }}>5,579</td>
-                            </tr>
+                            ))}
 
   		                  </table>
 	     	            	</div>
@@ -159,4 +102,29 @@ export default function AdditionalBuyersStampDuty() {
   		</section>
   	</Layout>
   )
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [ 
+      { params: { destinationSlug: 'singapore', roleSlug: 'software-developer' } }
+    ],
+    fallback: false
+  }
+}
+
+export async function getStaticProps({ params }) {
+
+  const average_salary_and_industry_salaries_fetch = await fetch("http://localhost:3000/api/destination/" + params.destinationSlug + "/average-salary/role/" + params.roleSlug)
+  const average_salary_and_industry_salaries = await average_salary_and_industry_salaries_fetch.json()
+
+  const average_salary = average_salary_and_industry_salaries.average_salary
+  const industry_salaries = average_salary_and_industry_salaries.industry_salaries
+
+  return {
+    props: { 
+      average_salary: average_salary,
+      industry_salaries: industry_salaries
+    }
+  }
 }

@@ -73,6 +73,24 @@ CREATE TABLE Plan_Step (
 	planId INTEGER REFERENCES Plan(id)
 );
 
+CREATE TABLE Average_Salary (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	salary INTEGER,
+	roleId INTEGER REFERENCES Role(id)
+);
+
+CREATE TABLE Industry_Salary (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	industry TEXT,
+	basic_25th INTEGER,
+	basic_median INTEGER,
+	basic_75th INTEGER,
+	gross_25th INTEGER,
+	gross_median INTEGER,
+	gross_75th INTEGER,
+	roleId INTEGER REFERENCES Role(id)
+);
+
 INSERT INTO Destination (name, slug) values ('Singapore', 'singapore');
 INSERT INTO Destination (name, slug) values ('Malaysia', 'malaysia');
 INSERT INTO Destination (name, slug) values ('Indonesia', 'indonesia');
@@ -166,6 +184,15 @@ INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, resu
 INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Register fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 4);
 INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Receive the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","EntrePass card", 4);
 
+INSERT INTO Average_Salary (salary, roleId) values (61236, 1);
+INSERT INTO Industry_Salary (industry, basic_25th, basic_median, basic_75th, gross_25th, gross_median, gross_75th, roleId) values ("All", 4000, 5159, 6774, 4120, 5300, 7164, 1);
+INSERT INTO Industry_Salary (industry, basic_25th, basic_median, basic_75th, gross_25th, gross_median, gross_75th, roleId) values ("Manufacturing", 5314, 6457, 8011, 5486, 6826, 8051, 1);
+INSERT INTO Industry_Salary (industry, basic_25th, basic_median, basic_75th, gross_25th, gross_median, gross_75th, roleId) values ("Wholesale & Retail Trade", 3355, 4800, 8341, 3550, 4995, 8381, 1);
+INSERT INTO Industry_Salary (industry, basic_25th, basic_median, basic_75th, gross_25th, gross_median, gross_75th, roleId) values ("Transportation & Storage", 4000, 4325, 5262, 4005, 4620, 5766, 1);
+INSERT INTO Industry_Salary (industry, basic_25th, basic_median, basic_75th, gross_25th, gross_median, gross_75th, roleId) values ("Information & Communications", 3974, 4808, 5800, 4105, 5070, 6300, 1);
+INSERT INTO Industry_Salary (industry, basic_25th, basic_median, basic_75th, gross_25th, gross_median, gross_75th, roleId) values ("Business Services", 4322, 5937, 7611, 4322, 6055, 7937, 1);
+INSERT INTO Industry_Salary (industry, basic_25th, basic_median, basic_75th, gross_25th, gross_median, gross_75th, roleId) values ("Education, Health & Social Services", 3358, 4179, 5579, 3358, 4229, 5579, 1);
+
 -- Down
 DROP TABLE Destination;
 DROP TABLE Role;
@@ -176,3 +203,5 @@ DROP TABLE Plan_Eligibility_Details;
 DROP TABLE Plan_Age_Eligibility;
 DROP TABLE Plan_Country_Eligibility;
 DROP TABLE Plan_Step;
+DROP TABLE Average_Salary;
+DROP TABLE Industry_Salary;

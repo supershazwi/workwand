@@ -210,7 +210,7 @@ export default class Role extends React.Component {
                       <div className="list-group list-group-flush">
                         <div className="list-group-item d-flex align-items-center">
                           <div className="mr-auto">
-                            <Link href="/destination/singapore/average-salary/role/software-developer"><a>
+                            <Link href="/destination/[destinationSlug]/average-salary/role/[roleSlug]" as={"/destination/singapore/average-salary/role/software-developer"}><a>
                             <p className="font-weight-bold mb-1">
                               Average Salary
                             </p>
