@@ -210,37 +210,39 @@ export default class Role extends React.Component {
                       <div className="list-group list-group-flush">
                         <div className="list-group-item d-flex align-items-center">
                           <div className="mr-auto">
-                            <Link href="/destination/[destinationSlug]/average-salary/role/[roleSlug]" as={"/destination/singapore/average-salary/role/software-developer"}><a>
                             <p className="font-weight-bold mb-1">
                               Average Salary
                             </p>
-                            </a></Link>
                           </div>
+                          <a href="https://stats.mom.gov.sg/Pages/Occupational-Wages-Tables2019.aspx">
                           <p className="font-weight-bold mb-1">
                             61,236 SGD per year
                           </p>
+                          </a>
                         </div>
                         <div className="list-group-item d-flex align-items-center">
                           <div className="mr-auto">
                             <p className="font-weight-bold mb-1">
-                              Total Jobs
+                              Job Vacancy
                             </p>
                           </div>
+                          <a href="https://stats.mom.gov.sg/Pages/JobVacancyTimeSeries.aspx">
                           <p className="font-weight-bold mb-1">
-                            5,623
+                            1,220
                           </p>
+                          </a>
                         </div>
                         <div className="list-group-item d-flex align-items-center">
                           <div className="mr-auto">
-                            <Link href="/destination/singapore/job-details/industry-growth/software-developer"><a>
                             <p className="font-weight-bold mb-1">
                               Industry Growth
                             </p>
-                            </a></Link>
                           </div>
+                          <a href="https://stats.mom.gov.sg/Pages/JobVacancyTimeSeries.aspx">
                           <p className="font-weight-bold mb-1">
-                            <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Navigation/Arrow-up.svg"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><rect fill="#000000" opacity=".3" x="11" y="5" width="2" height="14" rx="1"></rect><path d="M6.707 12.707a1 1 0 11-1.414-1.414l6-6a1 1 0 011.383-.03l6 5.5a1 1 0 11-1.352 1.474L12.03 7.384l-5.323 5.323z" fill="#000000"></path></g></svg></span> 4.3%
+                            + 2.56%
                           </p>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -254,37 +256,34 @@ export default class Role extends React.Component {
 
                         <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
                           <div className="mr-auto">
-                            <Link href="/destination/singapore/accommodation/condominium-rental/"><a>
                             <p className="font-weight-bold mb-1">
                               Condominium Rental
                             </p>
-                            </a></Link>
                           </div>
-                          <p className="font-weight-bold mb-1">
-                            3,300 SGD - 15,000 SGD per month
-                          </p>
                         </div>
                         <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
                           <div className="mr-auto">
                             <p className="font-size-sm text-muted mb-1">
-                              Minimum Occupancy Period
+                              Prime Locations
                             </p>
                           </div>
+                          <a href="https://www.ura.gov.sg/realEstateIIWeb/rental/search.action">
                           <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
-                            6 months
+                            ~ 13,000 SGD per month @ 46.64 SGD psm
                           </p>
+                          </a>
                         </div>
                         <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
                           <div className="mr-auto">
-                            <Link href="/destination/singapore/accommodation/condominium-rental/downpayment"><a style={{ fontSize: "0.9375rem"}}>
-                            <p className="font-weight-bold mb-1">
-                              Downpayment
+                            <p className="font-size-sm text-muted mb-1">
+                              Heartland Locations
                             </p>
-                            </a></Link>
                           </div>
+                          <a href="https://www.ura.gov.sg/realEstateIIWeb/rental/search.action">
                           <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
-                            1 month for 12-month lease
+                            ~ 3,500 SGD per month @ 29.55 SGD psm
                           </p>
+                          </a>
                         </div>
                         <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
                           <div className="mr-auto">

@@ -40,8 +40,8 @@ export default function AdditionalBuyersStampDuty({ average_salary, industry_sal
 
   		                      <tr>
   		                        <th rowspan="2" style={{ backgroundColor: "#2c3e50", color: "white", border: "1px solid #161c2d", verticalAlign: "middle" }}>Industry</th>
-  		                        <th scope="col" colspan="3" style={{ backgroundColor: "#2c3e50", color: "white", textAlign: "center", border: "1px solid #161c2d" }}>Basic Wage (Monthly)</th>
-  		                        <th scope="col" colspan="3" style={{ backgroundColor: "#2c3e50", color: "white", textAlign: "center", border: "1px solid #161c2d" }}>Gross Wage (Monthly)</th>
+  		                        <th scope="col" colSpan="3" style={{ backgroundColor: "#2c3e50", color: "white", textAlign: "center", border: "1px solid #161c2d" }}>Basic Wage (Monthly)</th>
+  		                        <th scope="col" colSpan="3" style={{ backgroundColor: "#2c3e50", color: "white", textAlign: "center", border: "1px solid #161c2d" }}>Gross Wage (Monthly)</th>
   		                      </tr>
 
 
