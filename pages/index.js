@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../components/layout'
 
 export default function Home() {
@@ -39,58 +40,45 @@ export default function Home() {
           </div>
         </div> 
       </section>
-      <section className="py-8 py-md-11 bg-gray-200">
+      <div className="position-relative">
+        <div className="shape shape-bottom shape-fluid-x svg-shim text-light">
+          <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>
+        </div>
+      </div>
+      <section className="py-8 py-md-11 bg-light">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-12 col-md-10 col-lg-7 text-center">
-              <h2 className="font-weight-bold">
-                Carve your own journey to reach your destination.
-              </h2>
+          <div class="col-12 col-md-10 col-lg-8 text-center">
+              <h1>
+                Explore offerings from various countries.
+              </h1>
               <p className="font-size-lg text-muted mb-7 mb-md-9">
-                There's no "one size fits all" plan. No matter where you're from or headed to, we can help.
+                We constantly keep you up to date with news on foreign talent policies, costs of living and more.
               </p>
             </div>
           </div> 
-          <div className="form-row">
-            <div className="col-12 col-lg-6 d-lg-flex pb-1 mb-4">
-              <div className="card shadow-light-lg overflow-hidden aos-init aos-animate" data-aos="fade-up">
-                <div className="row">
-                  <div className="col-md-4 position-relative">
-                    <img src="/img/illustrations/illustration-4.png" className="h-75 position-absolute right-0 mt-7 mr-n4" alt="..." />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body py-7 py-md-9 text-center">
-                      <h4 className="font-weight-bold">
-                        Compare Across Datapoints
-                      </h4>
-                      <p className="text-muted mb-0">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          <div className="row">
+            <div className="col-12 col-md-6 col-lg-4 d-flex">
+            <Link href="/destination/[destinationSlug]/role/[roleSlug]" as={"/destination/singapore/role/software-developer"}>
+            <a href="#" className="card-anchor" style={{width: "100%"}}>
+              <div className="card mb-6 mb-lg-0 pt-11 overlay overlay-black overlay-30 bg-cover shadow-light-lg lift lift-lg" style={{backgroundImage: "url('https://images.unsplash.com/photo-1499359875449-10bbeb21501e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')"}}>
+                <a className="card-body mt-auto text-center pb-11" href="#!">
+                  <h2 className="text-white">
+                    Singapore
+                  </h2>
+                </a>
+                <a className="card-meta" href="#!">
+                  <hr className="card-meta-divider border-white-20" />
+                  <p className="h6 text-white-80 mb-0 ml-auto">
+                    Last updated: 15<sup>th</sup> Sep 2020
+                  </p>
+
+                </a>
               </div>
+              </a>
+            </Link>
             </div>
-            <div className="col-12 col-lg-6 d-lg-flex pb-1 mb-4">
-              <div className="card shadow-light-lg overflow-hidden text-center aos-init aos-animate" data-aos="fade-up">
-                <div className="row">
-                  <div className="col-md-8">
-                    <div className="card-body py-7 py-md-9">
-                      <h4 className="font-weight-bold">
-                        Build A Plan
-                      </h4>
-                      <p className="text-muted mb-0">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <img src="/img/illustrations/illustration-7.png" className="h-75 position-absolute left-0 mt-7" alt="..." />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
+          </div>
         </div> 
       </section>
     </Layout>

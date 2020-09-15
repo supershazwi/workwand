@@ -17991,3 +17991,6 @@ body.compensate-for-scrollbar {
 .pd-bm-1-5 {
     padding-bottom: 1.5rem !important;
 }
+.card-anchor:hover {
+    text-decoration: none;
+}

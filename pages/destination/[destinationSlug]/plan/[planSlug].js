@@ -28,17 +28,13 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
               <div className="col-12 col-md-8">
                 <div className="card card-border border-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up">
                   <div className="card-body">
-                    <h3 className="card-title text-body font-weight-bold text-purple">
-                      <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Navigation/Double-check.svg"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M20.738 5.352a1 1 0 111.524 1.296l-8.5 10a1 1 0 01-1.426.1l-4.5-4a1 1 0 111.328-1.495l3.736 3.32 7.838-9.22z" fill="#5f27cd" opacity=".3"></path><path d="M15.738 6.352a1 1 0 111.524 1.296l-8.5 10a1 1 0 01-1.426.1l-4.5-4a1 1 0 111.328-1.495l3.736 3.32 7.838-9.22z" fill="#5f27cd"></path></g></svg></span> Elibility Requirements
-                    </h3>
+                    <h3 className="card-title text-body font-weight-bolder text-purple">Eligibility Requirements</h3>
                     <Markup htmlString = { result[0].eligibility_details } />
                   </div>
                 </div>
                 <div className="card card-border border-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up">
                   <div className="card-body">
-                    <h3 className="card-title text-body font-weight-bold text-purple">
-                      <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Code/Info-circle.svg"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><circle fill="#5f27cd" opacity=".3" cx="12" cy="12" r="10"></circle><rect fill="#5f27cd" x="11" y="10" width="2" height="7" rx="1"></rect><rect fill="#5f27cd" x="11" y="7" width="2" height="2" rx="1"></rect></g></svg></span> Facts & Figures
-                    </h3>
+                    <h3 className="card-title text-body font-weight-bolder text-purple">Facts & Figures</h3>
                     <div>
                       <div className="list-group list-group-flush">
                         <div className="list-group-item d-flex align-items-center">
@@ -131,15 +127,12 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                 </div>
               </div>
               <div className="col-12 col-md-4">
-                <a href={ result[0].application_link } type="button" className="btn btn-purple-soft btn-lg mb-1 btn-block mb-6">
+                <a href={ result[0].application_link }><button type="button" className="btn btn-purple-soft btn-lg mb-1 btn-block mb-6">
                   <strong>Begin Application</strong>
-                </a>
+                </button></a>
                 <div className="card card-border border-bleed shadow-light-lg mb-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                       <div className="card-body">
-
-                         <h3 className="card-title text-body font-weight-bold text-purple">
-                          <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Communication/Clipboard-list.svg"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#5f27cd" opacity=".3"></path><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#5f27cd"></path><rect fill="#5f27cd" opacity=".3" x="10" y="9" width="7" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="7" y="9" width="2" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="7" y="13" width="2" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="10" y="13" width="7" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="7" y="17" width="2" height="2" rx="1"></rect><rect fill="#5f27cd" opacity=".3" x="10" y="17" width="7" height="2" rx="1"></rect></g></svg></span> Steps
-                          </h3>
+                        <h3 className="card-title text-body font-weight-bolder text-purple">Steps</h3>
                         <div>
                           <div className="list-group list-group-flush">
                             { plan_steps.map(({ sequence, content, owner, processing_time, deadline, result }) => (
@@ -159,10 +152,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                 </div>
                 <div className="card card-border border-bleed shadow-light-lg mb-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                       <div className="card-body">
-
-                         <h3 className="card-title text-body font-weight-bold text-purple">
-                          <span data-toggle="tooltip" data-placement="top" title="" data-original-title="General/Search.svg"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M14.293 16.707a1 1 0 011.414-1.414l4 4a1 1 0 01-1.414 1.414l-4-4z" fill="#5f27cd" opacity=".3"></path><path d="M11 16a5 5 0 100-10 5 5 0 000 10zm0 2a7 7 0 110-14 7 7 0 010 14z" fill="#5f27cd"></path></g></svg></span> Sources
-                          </h3>
+                        <h3 className="card-title text-body font-weight-bolder text-purple">Sources</h3>
                         <div>
                           <div className="list-group list-group-flush">
                             { sources.map(({ name, link, id }) => (

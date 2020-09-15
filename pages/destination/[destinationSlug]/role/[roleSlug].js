@@ -3,9 +3,41 @@ import Link from 'next/link'
 import Head from 'next/head'
 import React from 'react'
 
+import Unsplash, { toJson } from 'unsplash-js'
+
 var Chart = require('chart.js')
 
+const unsplash = new Unsplash({ accessKey: "fBhbW3OH3YFqttxLXQSYI_JAYs94ZxTEtQQVNsP3lnQ" });
+
 export default class Role extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { imageArray: [] };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(index) {
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+
+    // build items array
+    var items = this.state.imageArray;
+
+    // define options (if needed)
+    var options = {
+        // optionName: 'option value'
+        // for example:
+        shareEl: false,
+        zoomEl: false,
+        fullscreenEl: false,
+        index: index // start at first slide
+    };
+
+    // Initializes and opens PhotoSwipe
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+    gallery.init();
+  }
 
   static async getInitialProps(ctx) {
     const res = await fetch("http://localhost:3000/api/plans/1")
@@ -23,7 +55,7 @@ export default class Role extends React.Component {
     return { plans: plans }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     var ctx = document.getElementById('temperatureChart');
     var temperatureChart = new Chart(ctx, {
         type: 'line',
@@ -183,11 +215,33 @@ export default class Role extends React.Component {
         options: {
         }
     });
+
+    const res = await fetch("https://api.unsplash.com/search/photos?client_id=fBhbW3OH3YFqttxLXQSYI_JAYs94ZxTEtQQVNsP3lnQ&page=1&query=singapore")
+    const return_array = await res.json()
+
+    let imageArray = []
+
+    return_array.results.forEach(function(imageObject) {
+      imageArray.push({
+        src: imageObject.urls.full,
+        title: imageObject.description,
+        w: imageObject.width,
+        h: imageObject.height
+      })
+    })
+
+    this.setState({ imageArray: imageArray })
   }
 
   render() {
     return (
         <Layout>
+          <Head>
+            <link href="/css/photoswipe.css" rel="stylesheet" type="text/css" />
+            <link href="/css/default-skin.css" rel="stylesheet" type="text/css" />
+            <script src="/js/photoswipe.min.js"></script> 
+            <script src="/js/photoswipe-ui-default.min.js"></script> 
+          </Head>
           <section className="pd-tp-6 pd-bm-1-5">
             <div className="container">
               <div className="row align-items-center">
@@ -938,17 +992,60 @@ export default class Role extends React.Component {
                       <h3 className="card-title text-body font-weight-bolder text-purple">Gallery</h3>
 
                       <div className="row">
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
-                        <div className="col-lg-4" style={{padding: "2px"}}><img src="/img/photos/photo-6.jpg" alt="..." class="card-img" /></div>
+                        { this.state.imageArray.map(({id, src}, index, array) => (
+                          <div className="col-lg-4" style={{padding: "2px"}}><img src={src} alt="..." className="card-img" onClick={() => this.handleClick(index)} style={{ height: "5rem" }} key={id} /></div>
+                        ))}
                       </div>
                     </div>
+                  </div>
+                  <div className="pswp" tabIndex="-1" role="dialog" aria-hidden="true">
+                      <div className="pswp__bg"></div>
+                      <div className="pswp__scroll-wrap">
+                          <div className="pswp__container">
+                              <div className="pswp__item"></div>
+                              <div className="pswp__item"></div>
+                              <div className="pswp__item"></div>
+                          </div>
+                          <div className="pswp__ui pswp__ui--hidden">
+
+                              <div className="pswp__top-bar">
+
+                                  <div className="pswp__counter"></div>
+
+                                  <button className="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                                  <button className="pswp__button pswp__button--share" title="Share"></button>
+
+                                  <button className="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                                  <button className="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                                  <div className="pswp__preloader">
+                                      <div className="pswp__preloader__icn">
+                                        <div className="pswp__preloader__cut">
+                                          <div className="pswp__preloader__donut"></div>
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div className="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                                  <div className="pswp__share-tooltip"></div> 
+                              </div>
+
+                              <button className="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                              </button>
+
+                              <button className="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                              </button>
+
+                              <div className="pswp__caption">
+                                  <div className="pswp__caption__center"></div>
+                              </div>
+
+                          </div>
+
+                      </div>
+
                   </div>
 
                 </div>
