@@ -181,13 +181,18 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
 }
 
 export async function getStaticPaths() {
+  const res = await fetch("http://localhost:3000/api/plans")
+  const plans = await res.json()
+
+  let paths = []
+
+  plans.forEach(function(plan) {
+    let paramsObj = { params: { destinationSlug: plan.name.toLowerCase(), planSlug: plan.slug } }
+    paths.push(paramsObj)
+  })  
+
   return {
-    paths: [ 
-      { params: { destinationSlug: 'singapore', planSlug: 'work-holiday-pass-under-work-holiday-programme-singapore' } },
-      { params: { destinationSlug: 'singapore', planSlug: 'work-holiday-pass-under-work-and-holiday-visa-programme-singapore' } },
-      { params: { destinationSlug: 'singapore', planSlug: 'employment-pass-singapore' } },
-      { params: { destinationSlug: 'singapore', planSlug: 'entrepass-singapore' } }  
-    ],
+    paths: paths,
     fallback: false
   }
 }

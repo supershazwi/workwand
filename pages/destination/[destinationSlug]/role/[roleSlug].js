@@ -13,7 +13,7 @@ export default class Role extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { imageArray: [] };
+    this.state = { imageArray: [], destinationSlug: "" };
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -40,6 +40,8 @@ export default class Role extends React.Component {
   }
 
   static async getInitialProps(ctx) {
+
+    const destinationSlug = ctx.query.destinationSlug
     const res = await fetch("http://localhost:3000/api/plans/1")
     const results = await res.json()
 
@@ -52,7 +54,7 @@ export default class Role extends React.Component {
       plans[item.category].push(item)
     })  
 
-    return { plans: plans }
+    return { plans: plans, destinationSlug: destinationSlug }
   }
 
   async componentDidMount() {
@@ -216,7 +218,7 @@ export default class Role extends React.Component {
         }
     });
 
-    const res = await fetch("https://api.unsplash.com/search/photos?client_id=fBhbW3OH3YFqttxLXQSYI_JAYs94ZxTEtQQVNsP3lnQ&page=1&query=singapore")
+    const res = await fetch("https://api.unsplash.com/search/photos?client_id=fBhbW3OH3YFqttxLXQSYI_JAYs94ZxTEtQQVNsP3lnQ&page=1&query=" + this.props.destinationSlug)
     const return_array = await res.json()
 
     let imageArray = []
@@ -247,7 +249,7 @@ export default class Role extends React.Component {
               <div className="row align-items-center">
                 <div className="col-12 col-md-6">
                   <h6 className="text-uppercase font-weight-bold">Destination</h6>
-                  <h2 className="font-weight-bolder">Become a <span style={{ borderBottom: "5px solid #fdcb6e"}}>Software Developer</span> in <span style={{ borderBottom: "5px solid #fdcb6e"}}>Singapore</span></h2>
+                  <h2 className="font-weight-bolder">Become a <span style={{ borderBottom: "5px solid #fdcb6e"}}>Software Developer</span> in <span style={{ borderBottom: "5px solid #fdcb6e", textTransform: "capitalize"}}>{this.props.destinationSlug}</span></h2>
                 </div>
                 <div className="col-12 col-md-6">
                   <img src="/img/illustrations/illustration-3.png" className="img-fluid" alt="..." />

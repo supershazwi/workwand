@@ -5,13 +5,18 @@ const sqlite3 = require("sqlite3")
 
 export default async function handler(req, res) {
   	res.statusCode = 200
+
+  	const {
+		query: { destinationSlug, planSlug },
+	} = req
   
   	const db = await sqlite.open({
 		filename: './mydb.sqlite',
 		driver: sqlite3.Database
-	})
+	})	
 
-	const result = await db.all('SELECT plan.slug, destination.name FROM plan INNER JOIN destination ON plan.destinationId = destination.id ORDER BY plan.name')
+  	const destination = await db.get("SELECT id FROM destination WHERE slug = '" + destinationSlug + "'")
+	const plans = await db.all("SELECT * FROM plan WHERE destinationId = " + destination.id + " ORDER BY category")
 
-  	res.json(result)
+  	res.json(plans)
 }
