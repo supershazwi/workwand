@@ -1459,7 +1459,7 @@ export default class Role extends React.Component {
                           
                           <div className="mr-auto">
                             
-                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0827-tightening-of-work-pass-requirements">
+                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0801-fwl-waiver-and-rebates-extended-for-the-cmp-sectors">
                             <p className="font-weight-bold mb-1">
                               Foreign Worker Levy Waiver and Rebates Extended for Construction, Marine Shipyard and Process Sectors
                             </p>
@@ -1477,7 +1477,7 @@ export default class Role extends React.Component {
                           
                           <div className="mr-auto">
                             
-                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0827-tightening-of-work-pass-requirements">
+                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0627-foreign-worker-levy-rebates-extended-for-construction-marine-shipyard-and-process-sector">
                             <p className="font-weight-bold mb-1">
                               Foreign Worker Levy Rebates Extended for Construction, Marine Shipyard and Process Sectors
                             </p>
@@ -1495,7 +1495,7 @@ export default class Role extends React.Component {
                           
                           <div className="mr-auto">
                             
-                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0827-tightening-of-work-pass-requirements">
+                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0625-140-work-passes-revoked-for-breach-of-circuit-breaker-measures-shn-qo">
                             <p className="font-weight-bold mb-1">
                               140 Work Passes Revoked for Breach of Circuit Breaker Measures, Stay-Home Notices or Quarantine Orders
                             </p>
