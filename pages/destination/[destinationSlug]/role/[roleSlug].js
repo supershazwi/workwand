@@ -245,26 +245,26 @@ export default class Role extends React.Component {
                 label: 'Literacy Rate (%)',
                 data: [96.2, 96.4, 96.6, 96.7, 96.8, 97, 97.2, 97.3, 97.5],
                 backgroundColor: [
-                    'rgba(39, 60, 117, 0.2)',
-                    'rgba(39, 60, 117, 0.2)',
-                    'rgba(39, 60, 117, 0.2)',
-                    'rgba(39, 60, 117, 0.2)',
-                    'rgba(39, 60, 117, 0.2)',
-                    'rgba(39, 60, 117, 0.2)',
-                    'rgba(39, 60, 117, 0.2)',
-                    'rgba(39, 60, 117, 0.2)',
-                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
+                    'rgba(254, 211, 48, 0.2)',
                 ],
                 borderColor: [
-                    'rgba(39, 60, 117, 1)',
-                    'rgba(39, 60, 117, 1)',
-                    'rgba(39, 60, 117, 1)',
-                    'rgba(39, 60, 117, 1)',
-                    'rgba(39, 60, 117, 1)',
-                    'rgba(39, 60, 117, 1)',
-                    'rgba(39, 60, 117, 1)',
-                    'rgba(39, 60, 117, 1)',
-                    'rgba(39, 60, 117, 1)',
+                    'rgba(254, 211, 48, 1)',
+                    'rgba(254, 211, 48, 1)',
+                    'rgba(254, 211, 48, 1)',
+                    'rgba(254, 211, 48, 1)',
+                    'rgba(254, 211, 48, 1)',
+                    'rgba(254, 211, 48, 1)',
+                    'rgba(254, 211, 48, 1)',
+                    'rgba(254, 211, 48, 1)',
+                    'rgba(254, 211, 48, 1)',
                 ],
                 borderWidth: 1
             }]
@@ -613,6 +613,51 @@ export default class Role extends React.Component {
                         </div>
                       </div>
 
+                    </div>
+                  </div>
+
+                  <div className="card card-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up">
+                    <div className="card-body">
+
+                      <h3 className="card-title text-body font-weight-bolder text-purple">Taxes</h3>
+                      <div className="list-group list-group-flush">
+                        <div className="list-group-item d-flex align-items-center">
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Income Tax
+                            </p>
+                          </div>
+                          <a href="https://stats.mom.gov.sg/Pages/Occupational-Wages-Tables2019.aspx">
+                          <p className="font-size-sm mb-1">
+                            0% - 22% per assessment year
+                          </p>
+                          </a>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center">
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Good & Services Tax
+                            </p>
+                          </div>
+                          <a href="https://stats.mom.gov.sg/Pages/JobVacancyTimeSeries.aspx">
+                          <p className="font-size-sm mb-1">
+                            7%
+                          </p>
+                          </a>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center">
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Betting Tax
+                            </p>
+                          </div>
+                          <a href="https://stats.mom.gov.sg/Pages/JobVacancyTimeSeries.aspx">
+                          <p className="font-size-sm mb-1">
+                            25% - 30%
+                          </p>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -1211,6 +1256,116 @@ export default class Role extends React.Component {
                           </p>
                         </div>
 
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Car Rental
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              Hatchback - Honda Jazz
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="https://www.sbstransit.com.sg/fares-and-concessions">
+                            50 SGD per day
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              Sedan - Mazda 6
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="https://www.sbstransit.com.sg/fares-and-concessions">
+                              75 SGD per day
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              SUV - Toyota C-HR
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="https://www.sbstransit.com.sg/fares-and-concessions">
+                              100 SGD per day
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              Sports - BMW 320i M Sport
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="https://www.sbstransit.com.sg/fares-and-concessions">
+                              300 SGD per day
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Car Purchase
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              Hatchback - Honda Jazz
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="https://www.sbstransit.com.sg/fares-and-concessions">
+                            78,999 SGD
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              Sedan - Mazda 6
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="https://www.sbstransit.com.sg/fares-and-concessions">
+                              113,388 SGD
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              SUV - Toyota C-HR
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="https://www.sbstransit.com.sg/fares-and-concessions">
+                              112,000 SGD
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              Sports - BMW 320i M Sport
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="https://www.sbstransit.com.sg/fares-and-concessions">
+                              227,888 SGD
+                            </a>
+                          </p>
+                        </div>
                       </div>
 
                       <h3 className="card-title text-body font-weight-bold text-purple" style={{ marginTop: "1.5rem" }}>International</h3>
