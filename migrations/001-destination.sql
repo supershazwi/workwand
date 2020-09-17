@@ -145,19 +145,19 @@ INSERT INTO Plan_Country_Eligibility (country, planId) values ("Switzerland", 1)
 INSERT INTO Plan_Country_Eligibility (country, planId) values ("United Kingdom", 1);
 INSERT INTO Plan_Country_Eligibility (country, planId) values ("United States", 1);
 
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Submit an application", "Candidate", "3 weeks", "","In-principle approval letter or rejection letter", 1);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Get the pass issued", "Candidate, company representative or employment agency", "Immediate", "Within 3 months of in-principle approval","Notification letter", 1);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Register fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 1);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Receive the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","Work Holiday Pass card", 1);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Candidate submits an application", "Candidate", "3 weeks", "","In-principle approval letter or rejection letter", 1);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Candidate or appointed employment agency requests for pass to be issued", "Candidate or employment agency", "Immediate", "Within 3 months of in-principle approval","Notification letter", 1);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Candidate registers fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 1);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Candidate or authorised recipients receives the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","Work Holiday Pass card", 1);
 
 INSERT INTO Plan_Age_Eligibility (lower_bound_age, upper_bound_age, planId) values (18, 30, 2);
 
 INSERT INTO Plan_Country_Eligibility (country, planId) values ("Australia", 2);
 
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Submit an application", "Candidate", "4 weeks", "","In-principle approval letter or rejection letter", 2);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Get the pass issued", "Candidate, company representative or employment agency", "Immediate", "Within 3 months of in-principle approval","Notification letter", 2);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Register fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 2);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Receive the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","Work Holiday Pass card", 2);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Candidate submits an application", "Candidate", "4 weeks", "","In-principle approval letter or rejection letter", 2);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Candidate or appointed employment agency requests for pass to be issued", "Candidate or employment agency", "Immediate", "Within 3 months of in-principle approval","Notification letter", 2);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Candidate registers fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 2);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Candidate or authorised recipients receives the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","Work Holiday Pass card", 2);
 
 INSERT INTO Plan_Age_Eligibility (lower_bound_age, upper_bound_age, planId) values (18, 99, 3);
 
@@ -166,25 +166,25 @@ INSERT INTO Plan_Country_Eligibility (country, planId) values ("All", 3);
 INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Employer or employment agency submits an application", "Employer or employment agency", "3 weeks", "","In-principle approval letter or rejection letter", 3);
 INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Employer or employment agency requests for pass to be issued", "Employer or employment agency", "Immediate", "Within 6 months of in-principle approval","Notification letter", 3);
 INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Candidate registers fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 3);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Candidate receives the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","Employment Pass card", 3);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Candidate or authorised recipients receives the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","Employment Pass card", 3);
 
 INSERT INTO Plan_Age_Eligibility (lower_bound_age, upper_bound_age, planId) values (18, 99, 4);
 
 INSERT INTO Plan_Country_Eligibility (country, planId) values ("All", 4);
 
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Submit an application", "Candidate", "8 weeks", "","In-principle approval letter or rejection letter", 4);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Get the pass issued", "Candidate, company representative or employment agency", "Immediate", "Within 6 months of in-principle approval","Notification letter", 4);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Register fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 4);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Receive the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","EntrePass card", 4);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Candidate submits an application", "Candidate", "8 weeks", "","In-principle approval letter or rejection letter", 4);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Candidate, company representative or employment agency requests for pass to be issued", "Candidate, company representative or employment agency", "Immediate", "Within 6 months of in-principle approval","Notification letter", 4);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Candidate registers fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 4);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Candidate or authorised recipients receives the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","EntrePass card", 4);
 
 INSERT INTO Plan_Age_Eligibility (lower_bound_age, upper_bound_age, planId) values (18, 99, 5);
 
 INSERT INTO Plan_Country_Eligibility (country, planId) values ("All", 5);
 
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Submit an application", "Candidate", "8 weeks", "","In-principle approval letter or rejection letter", 5);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Get the pass issued", "Candidate or employment agency", "Immediate", "Within 6 months of in-principle approval","Notification letter", 5);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Register fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 5);
-INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Receive the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","PEP card", 5);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (1, "Candidate submits an applicatio", "Candidate", "8 weeks", "","In-principle approval letter or rejection letter", 5);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (2, "Candidate or employment agency requests for pass to be issued", "Candidate or employment agency", "Immediate", "Within 6 months of in-principle approval","Notification letter", 5);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (3, "Candidate registers fingerprints and photo (if required)", "Candidate", "Immediate", "Within 2 weeks after pass is issued","Acknowledgment of card delivery", 5);
+INSERT INTO Plan_Step (sequence, content, owner, processing_time, deadline, result, planId) values (4, "Candidate or authorised recipients receives the card", "Authorised recipients or candidate", "Immediate", "4 working days after registration or document verification","PEP card", 5);
 
 
 INSERT INTO Average_Salary (salary, roleId) values (61236, 1);

@@ -160,7 +160,7 @@ export default function DestinationPlan({ result, plan_eligibility_details, sour
                                 <div className="mr-auto">
                                   <a href={ link }>
                                   <p className="font-weight-bold mb-1">
-                                    { name } <sup><span data-toggle="tooltip" data-placement="top" title="" data-original-title="Navigation/Up-right.svg"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><rect fill="#5f27cd" opacity=".3" transform="rotate(45 11.646 12.854)" x="10.646" y="5.854" width="2" height="14" rx="1"></rect><path d="M8.11 8.904a1 1 0 110-2h8.486a1 1 0 011 .956l.353 8.132a1 1 0 11-1.998.087l-.312-7.175H8.11z" fill="#5f27cd"></path></g></svg></span></sup>
+                                    { name } 
                                   </p>
                                   </a>
                                 </div>

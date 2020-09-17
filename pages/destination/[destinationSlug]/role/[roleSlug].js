@@ -218,6 +218,57 @@ export default class Role extends React.Component {
         }
     });
 
+    var ctx = document.getElementById('humidityChart');
+    var humidityChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Humidity',
+                data: [84.7, 82.8, 83.8, 84.8, 84.4, 83, 82.8, 83, 83.4, 84.1, 86.4, 86.9],
+                backgroundColor: [
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 80, 
+                        max: 89 
+                    }
+                }]
+            }
+        }
+    });
+
     const res = await fetch("https://api.unsplash.com/search/photos?client_id=fBhbW3OH3YFqttxLXQSYI_JAYs94ZxTEtQQVNsP3lnQ&page=1&query=" + this.props.destinationSlug)
     const return_array = await res.json()
 
@@ -889,34 +940,62 @@ export default class Role extends React.Component {
 
                       <h3 className="card-title text-body font-weight-bolder text-purple">Climate</h3>
 
-                      <div className="list-group list-group-flush">
-                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
-                          <div className="mr-auto">
-                            <p className="font-weight-bold mb-1">
-                              Temperature
-                            </p>
+                      <div className="row">
+                        <div className="col-lg-6">
+                          <div className="list-group list-group-flush">
+                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                              <div className="mr-auto">
+                                <p className="font-weight-bold mb-1">
+                                  Temperature
+                                </p>
+                              </div>
+                              <p className="font-weight-bold mb-1">
+                                24°C - 32°C 
+                              </p>
+                            </div>
+                            <div className="list-group-item d-flex align-items-center">
+                              <canvas id="temperatureChart" width="400" height="400"></canvas>
+                            </div>
                           </div>
-                          <p className="font-weight-bold mb-1">
-                            24°C - 32°C 
-                          </p>
                         </div>
-                        <div className="list-group-item d-flex align-items-center">
-                          <canvas id="temperatureChart" width="400" height="400"></canvas>
-                        </div>
-                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
-                          <div className="mr-auto">
-                            <p className="font-weight-bold mb-1">
-                              Rainfall
-                            </p>
+                        <div className="col-lg-6">
+                          <div className="list-group list-group-flush">
+                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                              <div className="mr-auto">
+                                <p className="font-weight-bold mb-1">
+                                  Humidity
+                                </p>
+                              </div>
+                              <p className="font-weight-bold mb-1">
+                                82.8% - 86.9%
+                              </p>
+                            </div>
+                            <div className="list-group-item d-flex align-items-center">
+                              <canvas id="humidityChart" width="400" height="400"></canvas>
+                            </div>
                           </div>
-                          <p className="font-weight-bold mb-1">
-                            100.8mm to 297.9mm
-                          </p>
-                        </div>
-                        <div className="list-group-item d-flex align-items-center">
-                          <canvas id="rainfallChart" width="400" height="400"></canvas>
                         </div>
                       </div>
+                      <hr />
+                      <div className="row">
+                        <div class="col-lg-6 offset-lg-3">
+                          <div className="list-group list-group-flush">
+                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                              <div className="mr-auto">
+                                <p className="font-weight-bold mb-1">
+                                  Rainfall
+                                </p>
+                              </div>
+                              <p className="font-weight-bold mb-1">
+                                100.8mm - 297.9mm
+                              </p>
+                            </div>
+                            <div className="list-group-item d-flex align-items-center">
+                              <canvas id="rainfallChart" width="400" height="400"></canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
                     </div>
                   </div>
 
@@ -925,8 +1004,14 @@ export default class Role extends React.Component {
 
                       <h3 className="card-title text-body font-weight-bolder text-purple">Racial Breakdown</h3>
 
-                      <div className="list-group-item d-flex align-items-center" style={{border: "0px"}}>
-                        <canvas id="racialBreakdownChart" width="400" height="400"></canvas>
+                      <div className="row">
+                        <div className="col-lg-6 offset-lg-3">
+                          <div className="list-group list-group-flush">
+                            <div className="list-group-item d-flex align-items-center" style={{border: "0px"}}>
+                              <canvas id="racialBreakdownChart" width="400" height="400"></canvas>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
