@@ -191,6 +191,101 @@ export default class Role extends React.Component {
         }
     });
 
+    var ctx = document.getElementById('crimeChart');
+    var crimeChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            datasets: [{
+                label: 'Overall Crime Rate Per 100,000 Population',
+                data: [608, 584, 555, 591, 611, 590, 582, 587, 616],
+                backgroundColor: [
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 400, 
+                        max: 700
+                    }
+                }]
+            }
+        }
+    });
+
+    var ctx = document.getElementById('literacyChart');
+    var literacyChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            datasets: [{
+                label: 'Literacy Rate (%)',
+                data: [96.2, 96.4, 96.6, 96.7, 96.8, 97, 97.2, 97.3, 97.5],
+                backgroundColor: [
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                    'rgba(39, 60, 117, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                    'rgba(39, 60, 117, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [
+                    {
+                      ticks: {
+                        min: 0,
+                        max: this.max,// Your absolute max value
+                        callback: function (value) {
+                          return (value / this.max * 100).toFixed(0) + '%'; // convert it to percentage
+                        },
+                      },
+                    },
+                  ],
+            }
+        }
+    });
+
     var ctx = document.getElementById('racialBreakdownChart');
     var racialBreakdownChart = new Chart(ctx, {
         type: 'doughnut',
@@ -198,7 +293,7 @@ export default class Role extends React.Component {
             labels: ['Chinese', 'Malay', 'Indian', 'Others'],
             datasets: [{
                 label: 'Race',
-                data: [65, 20, 10, 5],
+                data: [2993708, 540783, 362637, 129081],
                 backgroundColor: [
                     'rgba(243, 156, 18, 0.2)',
                     'rgba(0, 184, 148, 0.2)',
@@ -215,6 +310,36 @@ export default class Role extends React.Component {
             }]
         },
         options: {
+        }
+    });
+
+    var ctx = document.getElementById('genderBreakdownChart');
+    var genderBreakdownChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Male', 'Female'],
+            datasets: [{
+                label: 'Gender',
+                data: [1969382, 2056827],
+                backgroundColor: [
+                    'rgba(116, 185, 255, 0.2)',
+                    'rgba(255, 118, 117, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(116, 185, 255, 1)',
+                    'rgba(255, 118, 117, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
         }
     });
 
@@ -564,6 +689,116 @@ export default class Role extends React.Component {
                   <div className="card card-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up">
                     <div className="card-body">
 
+                      <h3 className="card-title text-body font-weight-bolder text-purple">Banks</h3>
+                      <div className="list-group list-group-flush">
+
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Development Bank of Singapore (DBS)
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              DBS Multiplier
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="#">
+                            0.7% - 2% per year
+                            </a>
+                          </p>
+                        </div>
+
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              United Overseas Bank (UOB)
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              UOB One 
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="#">
+                            0.25% - 0.75% per year
+                            </a>
+                          </p>
+                        </div>
+
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Oversea-Chinese Banking Corporation (OCBC)  
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              OCBC 360
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="#">
+                            0.4% - 1.2% per year
+                            </a>
+                          </p>
+                        </div>
+
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Standard Chartered 
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              BonusSaver
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="#">
+                            2.38% per year
+                            </a>
+                          </p>
+                        </div>
+
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Post Office Savings Bank (POSB)
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              POSB Save As You Earn (SAYE)
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="#">
+                            2% per year
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div className="card card-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up">
+                    <div className="card-body">
+
                     <h3 className="card-title text-body font-weight-bolder text-purple">Family</h3>
 
                       <div className="list-group list-group-flush">
@@ -825,6 +1060,49 @@ export default class Role extends React.Component {
                             </a>
                           </p>
                         </div>
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Picnic
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              Marina Barrage
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="#">
+                            
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px", borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              Botanic Gardens
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="#">
+                            
+                            </a>
+                          </p>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{paddingTop: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-size-sm text-muted mb-1">
+                              HortPark
+                            </p>
+                          </div>
+                          <p className="font-size-sm text-muted mb-1" style={{float: "right"}}>
+                            <a href="#">
+                            
+                            </a>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -833,6 +1111,8 @@ export default class Role extends React.Component {
                     <div className="card-body">
 
                       <h3 className="card-title text-body font-weight-bolder text-purple">Transportation</h3>
+
+                      <h3 className="card-title text-body font-weight-bold text-purple">Domestic</h3>
 
                       <div className="list-group list-group-flush">
                         <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
@@ -932,6 +1212,26 @@ export default class Role extends React.Component {
                         </div>
 
                       </div>
+
+                      <h3 className="card-title text-body font-weight-bold text-purple" style={{ marginTop: "1.5rem" }}>International</h3>
+
+                      <div className="list-group list-group-flush">
+                        <div className="list-group-item d-flex align-items-center">
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              International Flights
+                            </p>
+                          </div>
+                        </div>
+                        <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                          <div className="mr-auto">
+                            <p className="font-weight-bold mb-1">
+                              Regional Ferries
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
 
@@ -953,8 +1253,21 @@ export default class Role extends React.Component {
                                 24°C - 32°C 
                               </p>
                             </div>
-                            <div className="list-group-item d-flex align-items-center">
+                            <div className="list-group-item d-flex align-items-center" style={{border: "0px"}}>
                               <canvas id="temperatureChart" width="400" height="400"></canvas>
+                            </div>
+                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                              <div className="mr-auto">
+                                <p className="font-weight-bold mb-1">
+                                  Rainfall
+                                </p>
+                              </div>
+                              <p className="font-weight-bold mb-1">
+                                100.8mm - 297.9mm
+                              </p>
+                            </div>
+                            <div className="list-group-item d-flex align-items-center">
+                              <canvas id="rainfallChart" width="400" height="400"></canvas>
                             </div>
                           </div>
                         </div>
@@ -976,39 +1289,62 @@ export default class Role extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <hr />
-                      <div className="row">
-                        <div class="col-lg-6 offset-lg-3">
-                          <div className="list-group list-group-flush">
-                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
-                              <div className="mr-auto">
-                                <p className="font-weight-bold mb-1">
-                                  Rainfall
-                                </p>
-                              </div>
-                              <p className="font-weight-bold mb-1">
-                                100.8mm - 297.9mm
-                              </p>
-                            </div>
-                            <div className="list-group-item d-flex align-items-center">
-                              <canvas id="rainfallChart" width="400" height="400"></canvas>
-                            </div>
-                          </div>
-                        </div>
-                      </div>  
                     </div>
                   </div>
 
                   <div className="card card-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up">
                     <div className="card-body">
 
-                      <h3 className="card-title text-body font-weight-bolder text-purple">Racial Breakdown</h3>
+                      <h3 className="card-title text-body font-weight-bolder text-purple">Other Stats</h3>
 
                       <div className="row">
-                        <div className="col-lg-6 offset-lg-3">
+                        <div className="col-lg-6">
                           <div className="list-group list-group-flush">
+                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                              <div className="mr-auto">
+                                <p className="font-weight-bold mb-1">
+                                  Racial Breakdown
+                                </p>
+                              </div>
+                            </div>
                             <div className="list-group-item d-flex align-items-center" style={{border: "0px"}}>
                               <canvas id="racialBreakdownChart" width="400" height="400"></canvas>
+                            </div>
+
+                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                              <div className="mr-auto">
+                                <p className="font-weight-bold mb-1">
+                                  Crime Rate
+                                </p>
+                              </div>
+                            </div>
+                            <div className="list-group-item d-flex align-items-center">
+                              <canvas id="crimeChart" width="400" height="400"></canvas>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-lg-6">
+                          <div className="list-group list-group-flush">
+                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                              <div className="mr-auto">
+                                <p className="font-weight-bold mb-1">
+                                  Gender Breakdown
+                                </p>
+                              </div>
+                            </div>
+                            <div className="list-group-item d-flex align-items-center" style={{border: "0px"}}>
+                              <canvas id="genderBreakdownChart" width="400" height="400"></canvas>
+                            </div>
+
+                            <div className="list-group-item d-flex align-items-center" style={{borderBottom: "0px", paddingBottom: "0px"}}>
+                              <div className="mr-auto">
+                                <p className="font-weight-bold mb-1">
+                                  Literacy Rate
+                                </p>
+                              </div>
+                            </div>
+                            <div className="list-group-item d-flex align-items-center">
+                              <canvas id="literacyChart" width="400" height="400"></canvas>
                             </div>
                           </div>
                         </div>
@@ -1048,6 +1384,27 @@ export default class Role extends React.Component {
 
                           <div className="mb-3 mt-3">
                             <span className="badge badge-pill badge-purple-soft" style={{ display: "block" }}>
+                              <span className="h6 text-uppercase">Skilled & Semi-skilled</span>
+                            </span>
+                          </div>
+
+                          { this.props.plans['Skilled & Semi-skilled Workers'].map(({ name, slug, remarks }, index, array) => (
+                            <div className="list-group-item d-flex align-items-center" style={{ borderBottomColor: "transparent" }}>
+                              <div className="mr-auto">
+                                <Link href="/destination/[destinationSlug]/plan/[planSlug]" as={"/destination/singapore/plan/" + slug}><a>
+                                <p className="font-weight-bold mb-1">
+                                  { name }
+                                </p>
+                                </a></Link>
+                                <p className="font-size-sm text-muted mb-1">
+                                  { remarks }
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+
+                          <div className="mb-3 mt-3">
+                            <span className="badge badge-pill badge-purple-soft" style={{ display: "block" }}>
                               <span className="h6 text-uppercase">Trainees & Students</span>
                             </span>
                           </div>
@@ -1068,6 +1425,100 @@ export default class Role extends React.Component {
                           ))}
 
                         </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div className="card card-bleed shadow-light-lg mb-6 mb-md-8 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                    <div className="card-body">
+
+                      <h3 className="card-title text-body font-weight-bolder text-purple">News</h3>
+
+                      <div className="list-group list-group-flush">
+
+                        <div className="list-group-item d-flex align-items-center">
+                          
+                          <div className="mr-auto">
+                            
+                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0827-tightening-of-work-pass-requirements">
+                            <p className="font-weight-bold mb-1">
+                              Tightening of Work Pass Requirements
+                            </p>
+                            </a>
+
+                            <p className="font-size-sm text-muted mb-0">
+                              Ministry of Manpower, 27<sup>th</sup> August 2020
+                            </p>
+
+                          </div>
+
+                        </div>
+
+                        <div className="list-group-item d-flex align-items-center">
+                          
+                          <div className="mr-auto">
+                            
+                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0827-tightening-of-work-pass-requirements">
+                            <p className="font-weight-bold mb-1">
+                              Foreign Worker Levy Waiver and Rebates Extended for Construction, Marine Shipyard and Process Sectors
+                            </p>
+                            </a>
+
+                            <p className="font-size-sm text-muted mb-0">
+                              Ministry of Manpower, 1<sup>st</sup> August 2020
+                            </p>
+
+                          </div>
+
+                        </div>
+
+                        <div className="list-group-item d-flex align-items-center">
+                          
+                          <div className="mr-auto">
+                            
+                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0827-tightening-of-work-pass-requirements">
+                            <p className="font-weight-bold mb-1">
+                              Foreign Worker Levy Rebates Extended for Construction, Marine Shipyard and Process Sectors
+                            </p>
+                            </a>
+
+                            <p className="font-size-sm text-muted mb-0">
+                              Ministry of Manpower, 27<sup>th</sup> June 2020
+                            </p>
+
+                          </div>
+
+                        </div>
+
+                        <div className="list-group-item d-flex align-items-center">
+                          
+                          <div className="mr-auto">
+                            
+                            <a href="https://www.mom.gov.sg/newsroom/press-releases/2020/0827-tightening-of-work-pass-requirements">
+                            <p className="font-weight-bold mb-1">
+                              140 Work Passes Revoked for Breach of Circuit Breaker Measures, Stay-Home Notices or Quarantine Orders
+                            </p>
+                            </a>
+
+                            <p className="font-size-sm text-muted mb-0">
+                              Ministry of Manpower, 25<sup>th</sup> June 2020
+                            </p>
+
+                          </div>
+
+                        </div>
+
+                        <div className="list-group-item align-items-center" style={{ textAlign: "center", marginTop: "1rem" }}>
+                            
+                            <a href="https://www.mom.gov.sg/newsroom/press-releases?category=Work+passes+and+permits&page=1">
+                            <p className="font-weight-bold mb-1">
+                              Read More
+                            </p>
+                            </a>
+
+                        </div>
+
                       </div>
 
                     </div>

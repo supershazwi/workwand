@@ -48,7 +48,7 @@ export default function Home() {
       <section className="py-8 py-md-11 bg-light">
         <div className="container">
           <div className="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8 text-center">
+          <div className="col-12 col-md-10 col-lg-8 text-center">
               <h1>
                 Explore offerings from various countries.
               </h1>
